@@ -4,10 +4,8 @@ import path from "node:path";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/", // important for Vercel root deployments
+  base: "/", // important for preview/Vercel root
   resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "src"),
-    },
+    alias: { "@": path.resolve(__dirname, "src") },
   },
 });
