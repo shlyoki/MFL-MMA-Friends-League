@@ -1,0 +1,42 @@
+{
+  "name": "Ranking",
+  "type": "object",
+  "properties": {
+    "fighter_id": {
+      "type": "string",
+      "description": "Reference to Fighter"
+    },
+    "ruleset": {
+      "type": "string",
+      "enum": [
+        "mma",
+        "boxing",
+        "kickboxing",
+        "grappling"
+      ],
+      "description": "Which sport"
+    },
+    "weight_class": {
+      "type": "string",
+      "description": "Weight class for ranking"
+    },
+    "elo_rating": {
+      "type": "number",
+      "default": 1200,
+      "description": "ELO rating"
+    },
+    "rank_position": {
+      "type": "number",
+      "description": "Current rank in division"
+    },
+    "bouts_count": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "fighter_id",
+    "ruleset",
+    "weight_class"
+  ]
+}
