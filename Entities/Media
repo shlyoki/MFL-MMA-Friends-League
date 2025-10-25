@@ -1,0 +1,55 @@
+{
+  "name": "Media",
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "description": "Reference to Event"
+    },
+    "bout_id": {
+      "type": "string",
+      "description": "Reference to Bout (optional)"
+    },
+    "uploader_id": {
+      "type": "string",
+      "description": "User who uploaded"
+    },
+    "media_url": {
+      "type": "string",
+      "description": "URL to photo/video"
+    },
+    "thumbnail_url": {
+      "type": "string",
+      "description": "Thumbnail for videos"
+    },
+    "media_type": {
+      "type": "string",
+      "enum": [
+        "photo",
+        "video"
+      ],
+      "description": "Type of media"
+    },
+    "caption": {
+      "type": "string",
+      "description": "User caption"
+    },
+    "tagged_fighters": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Fighter IDs tagged"
+    },
+    "likes": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "event_id",
+    "uploader_id",
+    "media_url",
+    "media_type"
+  ]
+}
