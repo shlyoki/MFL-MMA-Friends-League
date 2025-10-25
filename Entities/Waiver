@@ -1,0 +1,39 @@
+{
+  "name": "Waiver",
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "description": "Reference to Event"
+    },
+    "user_id": {
+      "type": "string",
+      "description": "User who signed"
+    },
+    "signed_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp of signature"
+    },
+    "ip_address": {
+      "type": "string",
+      "description": "IP address for audit"
+    },
+    "signature_data": {
+      "type": "string",
+      "description": "Digital signature or confirmation"
+    },
+    "acknowledged_risks": {
+      "type": "boolean",
+      "default": true
+    },
+    "medical_clearance": {
+      "type": "boolean",
+      "description": "Confirmed they are medically cleared"
+    }
+  },
+  "required": [
+    "event_id",
+    "user_id"
+  ]
+}
