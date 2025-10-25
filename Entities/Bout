@@ -1,0 +1,122 @@
+{
+  "name": "Bout",
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "description": "Reference to Event"
+    },
+    "red_fighter_id": {
+      "type": "string",
+      "description": "Red corner fighter ID"
+    },
+    "blue_fighter_id": {
+      "type": "string",
+      "description": "Blue corner fighter ID"
+    },
+    "bout_order": {
+      "type": "number",
+      "description": "Order on the card (1 = main event)"
+    },
+    "bout_type": {
+      "type": "string",
+      "enum": [
+        "main_event",
+        "co_main",
+        "undercard"
+      ],
+      "description": "Bout importance"
+    },
+    "ruleset": {
+      "type": "string",
+      "enum": [
+        "mma",
+        "boxing",
+        "kickboxing",
+        "grappling"
+      ],
+      "description": "Ruleset for this bout"
+    },
+    "rounds": {
+      "type": "number",
+      "default": 3,
+      "description": "Number of rounds"
+    },
+    "round_length_minutes": {
+      "type": "number",
+      "default": 3,
+      "description": "Length of each round"
+    },
+    "weight_class": {
+      "type": "string",
+      "description": "Agreed weight class"
+    },
+    "catchweight": {
+      "type": "number",
+      "description": "Custom weight if catchweight bout"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "proposed",
+        "accepted",
+        "confirmed",
+        "in_progress",
+        "completed",
+        "cancelled"
+      ],
+      "default": "proposed",
+      "description": "Bout status"
+    },
+    "winner_id": {
+      "type": "string",
+      "description": "Winner fighter ID"
+    },
+    "result": {
+      "type": "string",
+      "enum": [
+        "UD",
+        "SD",
+        "MD",
+        "draw",
+        "KO",
+        "TKO",
+        "submission",
+        "doctor_stoppage",
+        "no_contest",
+        "DQ"
+      ],
+      "description": "Result type"
+    },
+    "method": {
+      "type": "string",
+      "description": "Specific finish method (e.g., 'Rear Naked Choke')"
+    },
+    "round_finished": {
+      "type": "number",
+      "description": "Which round it ended (if early finish)"
+    },
+    "time_finished": {
+      "type": "string",
+      "description": "Time in the round (e.g., '2:34')"
+    },
+    "notes": {
+      "type": "string",
+      "description": "Additional notes"
+    },
+    "red_accepted": {
+      "type": "boolean",
+      "default": false
+    },
+    "blue_accepted": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "required": [
+    "event_id",
+    "red_fighter_id",
+    "blue_fighter_id",
+    "ruleset"
+  ]
+}
