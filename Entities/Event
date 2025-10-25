@@ -1,0 +1,99 @@
+{
+  "name": "Event",
+  "type": "object",
+  "properties": {
+    "organizer_id": {
+      "type": "string",
+      "description": "User ID of organizer"
+    },
+    "title": {
+      "type": "string",
+      "description": "Event name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Event description"
+    },
+    "date_time": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Event date and time"
+    },
+    "location": {
+      "type": "string",
+      "description": "Venue or address"
+    },
+    "visibility": {
+      "type": "string",
+      "enum": [
+        "public",
+        "unlisted",
+        "private"
+      ],
+      "default": "public",
+      "description": "Who can see the event"
+    },
+    "ruleset_default": {
+      "type": "string",
+      "enum": [
+        "mma",
+        "boxing",
+        "kickboxing",
+        "grappling"
+      ],
+      "description": "Default ruleset for all bouts"
+    },
+    "equipment_requirements": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Required equipment (mouthguard, gloves, etc)"
+    },
+    "max_bouts": {
+      "type": "number",
+      "default": 10,
+      "description": "Maximum number of bouts"
+    },
+    "min_age": {
+      "type": "number",
+      "default": 18,
+      "description": "Minimum age to participate"
+    },
+    "paid_event": {
+      "type": "boolean",
+      "default": false,
+      "description": "Is this a paid event"
+    },
+    "ticket_price": {
+      "type": "number",
+      "description": "Ticket price in USD"
+    },
+    "rsvp_limit": {
+      "type": "number",
+      "description": "Max attendees"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "published",
+        "live",
+        "completed",
+        "cancelled"
+      ],
+      "default": "draft",
+      "description": "Event status"
+    },
+    "banner_image": {
+      "type": "string",
+      "description": "Event banner/poster URL"
+    }
+  },
+  "required": [
+    "organizer_id",
+    "title",
+    "date_time",
+    "location"
+  ]
+}
