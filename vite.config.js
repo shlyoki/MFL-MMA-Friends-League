@@ -7,10 +7,10 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './'), // or './src' if your code lives in src
-    },
+      '@': path.resolve(__dirname, 'src') // change to '.' if your code isn't in /src
+    }
   },
   build: {
-    outDir: 'dist',
-  },
+    outDir: 'dist'
+  }
 })
