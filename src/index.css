@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Optional: dark background default to match your UI */
+:root {
+  color-scheme: dark;
+}
