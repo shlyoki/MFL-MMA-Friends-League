@@ -1,21 +1,40 @@
-import React from "react";
+// src/utils/index.js
 
-export function Card({ className = "", ...props }) {
-  return <div className={`rounded-2xl border shadow-sm bg-white ${className}`} {...props} />;
+export function cn(...classes) {
+  return classes.flat().filter(Boolean).join(' ');
 }
-export function CardHeader({ className = "", ...props }) {
-  return <div className={`p-4 border-b ${className}`} {...props} />;
+
+export const noop = () => {};
+
+export function clamp(n, min, max) {
+  return Math.min(Math.max(n, min), max);
 }
-export function CardTitle({ className = "", ...props }) {
-  return <h3 className={`text-lg font-semibold ${className}`} {...props} />;
+
+/**
+ * Create a URL string with ?page=<number>, preserving existing query params.
+ * Works with relative paths like "/events?sort=asc".
+ */
+export function createPageUrl(path, page) {
+  const url = new URL(path, 'http://dummy.local');
+  url.searchParams.set('page', String(page));
+  return `${url.pathname}${url.search}${url.hash}`;
 }
-export function CardDescription({ className = "", ...props }) {
-  return <p className={`text-sm text-gray-500 ${className}`} {...props} />;
+
+export function formatDate(value) {
+  const d = new Date(value);
+  return Number.isNaN(+d) ? '' : d.toLocaleDateString();
 }
-export function CardContent({ className = "", ...props }) {
-  return <div className={`p-4 ${className}`} {...props} />;
+
+export function formatNumber(n) {
+  const x = Number(n);
+  return Number.isFinite(x) ? x.toLocaleString() : '';
 }
-export function CardFooter({ className = "", ...props }) {
-  return <div className={`p-4 border-t ${className}`} {...props} />;
-}
-export default { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter };
+
+export default {
+  cn,
+  noop,
+  clamp,
+  createPageUrl,
+  formatDate,
+  formatNumber,
+};
