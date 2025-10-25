@@ -1,0 +1,45 @@
+{
+  "name": "Scorecard",
+  "type": "object",
+  "properties": {
+    "bout_id": {
+      "type": "string",
+      "description": "Reference to Bout"
+    },
+    "judge_user_id": {
+      "type": "string",
+      "description": "Judge who scored"
+    },
+    "round_number": {
+      "type": "number",
+      "description": "Which round (1-5)"
+    },
+    "red_points": {
+      "type": "number",
+      "description": "Points for red corner"
+    },
+    "blue_points": {
+      "type": "number",
+      "description": "Points for blue corner"
+    },
+    "red_fouls": {
+      "type": "number",
+      "default": 0
+    },
+    "blue_fouls": {
+      "type": "number",
+      "default": 0
+    },
+    "notes": {
+      "type": "string",
+      "description": "Judge notes"
+    }
+  },
+  "required": [
+    "bout_id",
+    "judge_user_id",
+    "round_number",
+    "red_points",
+    "blue_points"
+  ]
+}
