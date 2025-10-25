@@ -1,0 +1,52 @@
+{
+  "name": "RSVP",
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "description": "Reference to Event"
+    },
+    "user_id": {
+      "type": "string",
+      "description": "User RSVPing"
+    },
+    "role_at_event": {
+      "type": "string",
+      "enum": [
+        "fighter",
+        "judge",
+        "spectator",
+        "corner"
+      ],
+      "description": "Their role at this event"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "interested",
+        "going",
+        "not_going",
+        "checked_in"
+      ],
+      "default": "interested"
+    },
+    "checked_in_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When they checked in"
+    },
+    "equipment_checked": {
+      "type": "boolean",
+      "default": false,
+      "description": "Equipment verified"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "event_id",
+    "user_id",
+    "role_at_event"
+  ]
+}
