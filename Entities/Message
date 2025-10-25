@@ -1,0 +1,37 @@
+{
+  "name": "Message",
+  "type": "object",
+  "properties": {
+    "thread_id": {
+      "type": "string",
+      "description": "Thread identifier (event_id or bout_id)"
+    },
+    "thread_type": {
+      "type": "string",
+      "enum": [
+        "event",
+        "bout",
+        "direct"
+      ],
+      "description": "Type of conversation"
+    },
+    "sender_id": {
+      "type": "string",
+      "description": "User who sent message"
+    },
+    "body": {
+      "type": "string",
+      "description": "Message content"
+    },
+    "attachment_url": {
+      "type": "string",
+      "description": "Optional attachment"
+    }
+  },
+  "required": [
+    "thread_id",
+    "thread_type",
+    "sender_id",
+    "body"
+  ]
+}
