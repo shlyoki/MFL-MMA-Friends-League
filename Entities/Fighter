@@ -1,0 +1,120 @@
+{
+  "name": "Fighter",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "Reference to User entity"
+    },
+    "weight_class": {
+      "type": "string",
+      "enum": [
+        "strawweight",
+        "flyweight",
+        "bantamweight",
+        "featherweight",
+        "lightweight",
+        "welterweight",
+        "middleweight",
+        "light_heavyweight",
+        "heavyweight",
+        "super_heavyweight"
+      ],
+      "description": "Weight class"
+    },
+    "current_weight": {
+      "type": "number",
+      "description": "Current weight in lbs"
+    },
+    "stance": {
+      "type": "string",
+      "enum": [
+        "orthodox",
+        "southpaw",
+        "switch"
+      ],
+      "description": "Fighting stance"
+    },
+    "experience_level": {
+      "type": "string",
+      "enum": [
+        "beginner",
+        "intermediate",
+        "advanced"
+      ],
+      "default": "beginner",
+      "description": "Experience level"
+    },
+    "gym_team": {
+      "type": "string",
+      "description": "Gym or team affiliation"
+    },
+    "preferred_rulesets": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "mma",
+          "boxing",
+          "kickboxing",
+          "grappling"
+        ]
+      },
+      "description": "Preferred combat sports"
+    },
+    "wins": {
+      "type": "number",
+      "default": 0
+    },
+    "losses": {
+      "type": "number",
+      "default": 0
+    },
+    "draws": {
+      "type": "number",
+      "default": 0
+    },
+    "ko_wins": {
+      "type": "number",
+      "default": 0
+    },
+    "submission_wins": {
+      "type": "number",
+      "default": 0
+    },
+    "medical_notes": {
+      "type": "string",
+      "description": "Private medical conditions/injuries"
+    },
+    "emergency_contact_name": {
+      "type": "string",
+      "description": "Emergency contact name"
+    },
+    "emergency_contact_phone": {
+      "type": "string",
+      "description": "Emergency contact phone"
+    },
+    "availability": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Available dates"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "injured",
+        "suspended",
+        "retired"
+      ],
+      "default": "active"
+    }
+  },
+  "required": [
+    "user_id",
+    "weight_class",
+    "experience_level"
+  ]
+}
